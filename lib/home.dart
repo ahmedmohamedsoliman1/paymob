@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testpayment/payment_manager/payment_manager.dart';
+import 'package:testpayment/payment_manager/stripe_manager.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,6 +22,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
+
+   /// paymob
   Future <void> pay () async {
     PaymentManager paymentManager = PaymentManager();
     await paymentManager.authenticationRequest().then((value) async{
@@ -31,8 +34,11 @@ class HomeScreen extends StatelessWidget {
         await launchUrl(url);
       });
     });
+  }
 
+  /// stripe
 
-
+  Future <void> makePayment () async{
+    await StripeManager.makePayment(20, "EGP") ;
   }
 }

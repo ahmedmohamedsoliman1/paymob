@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:testpayment/constants.dart';
 
 import 'home.dart';
 
 void main() {
+
+  Stripe.publishableKey = Constants.publishableKey ;
   runApp(const MyApp());
 }
 
