@@ -1,0 +1,5 @@
+class Constants {
+
+  static const String paymentKey = "ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1RZek5EQTFMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkuWTlwbjJJVDZQYjVPaXFIcTRpTTBfX1IzeU5OTmhyVGtBcklpZWJZRHJ3X0xnZXVtRFVISUpvcWRlTmZhTk01N0JHZkJBNjNPSlJWS3BrYWdnWXI0bmc=" ;
+  static const int integrationId = 4531303 ;
+}
