@@ -1,4 +1,5 @@
 {
   "helloWorld": "Hello World",
-  "changelocale" : "Change locale"
+  "changelocalear" : "change locale to arabic" ,
+  "changelocaleen" : "change locale to english"
 }

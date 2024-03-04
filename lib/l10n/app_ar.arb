@@ -1,4 +1,5 @@
 {
     "helloWorld": "اهلا" ,
-    "changelocale" : "تغيير اللغه"
+    "changelocalear" : "تغيير الى العربيه" ,
+    "changelocaleen" : "تغيير الى الانجليزيه"
 }

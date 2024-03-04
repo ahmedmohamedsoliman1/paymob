@@ -6,6 +6,8 @@ part 'language_state.dart';
 
 class LanguageCubit extends Cubit<LanguageState> {
   LanguageCubit() : super(LanguageInitial());
+
+
   Future <void> getLanguage () async {
     LanguageHelper helper = LanguageHelper();
    String cachedLan = await helper.getLan();

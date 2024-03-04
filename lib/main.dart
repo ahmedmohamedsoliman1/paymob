@@ -6,6 +6,7 @@ import 'package:testpayment/counter_bloc/counter_bloc.dart';
 import 'package:testpayment/counter_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:testpayment/internet_bloc/internet_bloc.dart';
 import 'package:testpayment/language_cubit/language_cubit.dart';
 
 import 'home.dart';
@@ -25,34 +26,13 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => CounterBloc()),
-          BlocProvider(create: (context) => LanguageCubit()..getLanguage())
+          BlocProvider(create: (context) => LanguageCubit()..getLanguage()),
+          BlocProvider(create: (context) => InternetBloc())
         ],
         child: BlocBuilder<LanguageCubit , LanguageState>(
             builder: (context , state) {
-             if (state is LanguageInitial){
-               return MaterialApp(
-                 locale: Locale("en"),
-                 localizationsDelegates: [
-                   AppLocalizations.delegate, // Add this line
-                   GlobalMaterialLocalizations.delegate,
-                   GlobalWidgetsLocalizations.delegate,
-                   GlobalCupertinoLocalizations.delegate,
-                 ],
-                 supportedLocales: [
-                   Locale('en'), // English
-                   Locale('ar'), // Spanish
-                 ],
-                 title: 'Flutter Demo' ,
-                 initialRoute: "counter",
-                 routes: {
-                   "counter" : (context) => CounterScreen() ,
-                   "home" : (context) => HomeScreen()
-                 },
-                 theme: ThemeData(
-                   useMaterial3: false ,
-                 ),
-               );
-             }else if (state is ChangeLangState){
+             if (state is ChangeLangState){
+               print("change lan state") ;
                return MaterialApp(
                  locale: Locale(state.newLang),
                  localizationsDelegates: [
@@ -76,6 +56,7 @@ class MyApp extends StatelessWidget {
                  ),
                );
              }else {
+               print("init lan state");
                return SizedBox();
              }
             }));
